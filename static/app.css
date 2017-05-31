@@ -1,0 +1,51 @@
+/*Colors*/
+
+.primary-color {
+	
+}
+
+#page {
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	position: relative;
+	background: #C9FFBF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.content-page {
+	padding:8px;
+	background: #f5f5f5;
+	box-shadow: 0 0 4px rgba(0,0,0,.14);
+	border-radius: 4px;
+}
+header{
+	background: #fff;
+	z-index: 2;
+	max-height: 10vh;
+	box-shadow: 0 0 4px rgba(0,0,0,.44);
+	margin-bottom: 20px;
+}
+header img {
+	max-height: 9vh;
+	padding: 12px 0;
+}
+footer {
+	margin-top: 100px;
+}
+
+
+/* User Style */
+
+
+
+.user-info {
+	float: right;
+	background: #ffffff;
+	padding: 0 25px;
+}
+.user-info .user-name {
+	padding: 15px 0;
+	margin-right: 20px;
+}

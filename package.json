@@ -1,0 +1,19 @@
+{
+  "name": "deetoweb",
+  "version": "1.0.0",
+  "description": "Projeto criado para a disciplina de Desenvolvimento de Software para Web - UFG - 2017 01",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ufg",
+    "web",
+    "otaku",
+    "social",
+    "rede",
+    "social"
+  ],
+  "author": "Guilherme Alves, Igor Queiroz, Raphael de Brito e Rony Nogueira",
+  "license": "ISC"
+}
