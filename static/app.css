@@ -1,25 +1,18 @@
 /*Colors*/
-
-.primary-color {
-	
-}
-
 #page {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	background-size: cover;
 	position: relative;
 	background: #C9FFBF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #FFAFBD, #C9FFBF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #FFAFBD, #C9FFBF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to bottom, #CB356B, #BD3F32);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #CB356B, #BD3F32); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .content-page {
 	padding:8px;
 	background: #f5f5f5;
 	box-shadow: 0 0 4px rgba(0,0,0,.14);
 	border-radius: 4px;
-	text-align: center;
 }
 header{
 	background: #fff;
@@ -51,7 +44,7 @@ footer {
 }
 
 
-input[type="text"]{
+.form input[type="text"]{
   display: block;
   width: 309px;
   height: 35px;
@@ -66,7 +59,7 @@ input[type="text"]{
   -webkit-border-radius: 5px;
 }
 
-input[type="submit"]{
+.form input[type="submit"]{
   display: block;
   background: #F9B9BD;
   width: 314px;
@@ -81,7 +74,7 @@ input[type="submit"]{
   font-size: 17px;
 }
 
-input[type="fb"]{
+.form input[type="fb"]{
   display: block;
   background: #3B5998;
   width: 314px;
@@ -97,21 +90,8 @@ input[type="fb"]{
   text-align: center;
 }
 
-input[type="submit"]:hover{
+.form input[type="submit"]:hover{
   background: #09cca6
-}
-
-
-
-
-a{
-  text-align: center;
-  font-family: Arial;
-  color: gray;
-  display: block;
-  margin: 15px auto;
-  text-decoration: none;
-  font-size: 12px;
 }
 
 a:hover{
