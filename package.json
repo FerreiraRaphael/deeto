@@ -15,5 +15,8 @@
     "social"
   ],
   "author": "Guilherme Alves, Igor Queiroz, Raphael de Brito e Rony Nogueira",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "foundation-sites": "^6.3.1"
+  }
 }
