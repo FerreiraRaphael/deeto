@@ -3,28 +3,9 @@ import bcrypt from "bcrypt";
 
 mongoose.Promise = global.Promise;
 const schema = Schema({
-  local: {
-    email: String,
-    password: String
-  },
-  facebook: {
-    id: String,
-    token: String,
-    email: String,
-    name: String
-  },
-  twitter: {
-    id: String,
-    token: String,
-    displayName: String,
-    username: String
-  },
-  google: {
-    id: String,
-    token: String,
-    email: String,
-    name: String
-  }
+  name: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
+  password: { type: String, required: true }
 });
 
 schema.pre("save", async function hashPassword(next) {
