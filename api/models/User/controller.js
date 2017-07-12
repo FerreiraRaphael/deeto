@@ -3,18 +3,18 @@ import bcrypt from "bcrypt";
 import User from "./schema";
 
 class UserController {
-  async find(req, res) {
-    const users = await User.find({}).catch(e => res.json({ e }));
+  static async find(req, res) {
+    const users = await User.find({}, "name email").catch(e => res.json({ e }));
     res.json(users);
   }
 
-  async create(req, res) {
+  static async create(req, res) {
     const user = await User.create(req.body).catch(e => res.json({ e }));
     res.json(user);
   }
 
-  async findById(req, res) {
-    const result = await User.findById(req.params.id).catch(e =>
+  static async findById(req, res) {
+    const result = await User.findById(req.params.id, "name email").catch(e =>
       res.json({ e })
     );
     if (!result) {
@@ -23,8 +23,11 @@ class UserController {
     res.status(200).json(result);
   }
 
-  async update(req, res) {
-    const result = await User.update({ _id: req.params.id }, req.body).catch(e => res.json({ e }));
+  static async update(req, res) {
+    const result = await User.update(
+      { _id: req.params.id },
+      req.body
+    ).catch(e => res.json({ e }));
     if (result.n < 1) {
       res.sendStatus(404);
     }
@@ -34,15 +37,17 @@ class UserController {
     res.sendStatus(204);
   }
 
-  async remove(req, res) {
-    const result = await User.remove({ _id: req.params.id }).catch(e => res.json({ e }));
+  static async remove(req, res) {
+    const result = await User.remove({ _id: req.params.id }).catch(e =>
+      res.json({ e })
+    );
     if (!result) {
       res.sendStatus(404);
     }
     res.sendStatus(204);
   }
 
-  async auth(req, res) {
+  static async auth(req, res) {
     try {
       const user = await User.findOne({ email: req.body.email });
       if (!user)
@@ -69,4 +74,4 @@ class UserController {
   }
 }
 
-export default new UserController();
+export default UserController;
