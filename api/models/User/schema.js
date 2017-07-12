@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 
 mongoose.Promise = global.Promise;
+
 const schema = Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true, required: true },
@@ -11,14 +12,14 @@ const schema = Schema({
 schema.pre("save", async function hashPassword(next) {
   try {
     // only hash the password if it has been modified (or is new)
-    if (!this.isModified("local.password")) return next();
+    if (!this.isModified("password")) return next();
 
     const salt = await bcrypt.genSalt(10);
     // hash the password along with our new salt
-    const hash = await bcrypt.hash(this.local.password, salt);
+    const hash = await bcrypt.hash(this.password, salt);
 
     // override the cleartext password with the hashed one
-    this.local.password = hash;
+    this.password = hash;
     return next();
   } catch (e) {
     return next(e);
