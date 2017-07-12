@@ -27,7 +27,9 @@
     "eslint-config-prettier": "^2.2.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-prettier": "^2.1.2",
+    "nodemon": "^1.11.0",
     "prettier": "^1.5.2",
+    "prettier-eslint": "^6.4.2",
     "rimraf": "^2.6.1"
   },
   "babel": {
@@ -55,7 +57,7 @@
     }
   },
   "scripts": {
-    "start": "babel-node tools/server.src",
+    "start": "nodemon tools/server.src --exec babel-node --inspect --presets env",
     "lint": "eslint tools api --fix",
     "clean-dist": "rimraf ./dist && mkdir dist"
   }
