@@ -11,14 +11,19 @@ import routes from "../api/routes";
 const port = process.env.PORT || 8080;
 const app = express();
 const strategy = new BearerStrategy((token, done) => {
-  jwt.verify(token, config.SECRET, (err, decoded) => {
+  jwt.verify(token, config.SECRET, (err, user) => {
+    debugger;
     if (err) {
+      return done("err");
+    }
+    if (!user) {
       return done(null, {
         success: false,
         message: "Failed to authenticate token."
-      });
+      })
     }
-    return done(null, decoded);
+    debugger;
+    return done(null, user);
   });
 });
 

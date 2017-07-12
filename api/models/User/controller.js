@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import User from "./schema";
+import config from "../../../tools/config";
 
 class UserController {
   static async find(req, res) {
@@ -59,7 +60,7 @@ class UserController {
         res.json({ sucess: false, message: "Wrong password or email" });
       }
 
-      const token = jwt.sign(user, req.app.get("superSecret"), {
+      const token = jwt.sign(user, config.SECRET, {
         expiresIn: 60 * 60 * 24 // expires in 24 hours
       });
 
