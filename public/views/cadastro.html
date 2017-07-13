@@ -2,80 +2,76 @@
 <html lang="pt_br">
 
 <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../node_modules/foundation-sites/dist/css/foundation.min.css" rel="stylesheet">
-    <link href="../static/app.css" rel="stylesheet">
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href="/static/css/app.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="page">
-        <header>
-            <div class="row">
-                <div class="small-12 large-4 columns">
-                    <a href="match.html">
-                        <img src="../static/img/Deeto.png" alt="Logo Deeto Web" />
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+                        <img src="../static/img/Deeto.png" alt="" height="36px">
                     </a>
-                </div>
-            </div>
-        </header>
-        <section>
-            <div class="row">
-                <div class="small-12 large-8 large-centered columns">
-                    <div class="content-page">
-                        <h2>Cadastro</h2>
-                        <hr>
-                        <div class="content">
-                            <form>
-                                <div class="form">
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" placeholder="Insira seu nome" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" placeholder="E-mail" />
-                                        </div>
-                                        <div class="large-12 columns">
-                                            <input type="password" placeholder="Sua senha" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <select id="sexo">
-                                                        <option value="Sexo">Sexo</option>
-                                                        <option value="Masculino">Masculino</option>
-                                                        <option value="Feminino">Feminino</option>
-                                                        <option value="Indefinido">Indefinido</option>
-                                                        <option value="Não desejo compartilhar">Não desejo compartilhar</option>
-                                                    </select>
-                                        </div>
-                                    </div>
-                                    <p class="text-center">
-                                    <a href="profile.html" class="button primary">Cadastrar</a>
-                                    <br>
-                                </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    </section>
-    <footer>
-        <div class="row">
-            <div class="small-12 large-centered columns">
-                <p class="text-center">
-                    Deeto &copy; 2017 - Todos os direitos reservados
-                </p>
-            </div>
         </div>
-    </footer>
-
+        <div>
+          <p class="navbar-text navbar-right">
+            <a href="/entrar" class="btn btn-primary">ENTRAR</a>
+          </p>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="inicio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <h1 class="text-center white">Cadastro</h1>
+          <form action="">
+            <div class="form-group">
+              <label for="" class="text-center white">Nome</label>
+              <input type="text" name="name" value="" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="" class="text-center white">E-mail</label>
+              <input type="email" name="email" value="" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="" class="text-center white">Senha</label>
+              <input type="password" name="password" value="" class="form-control" required>
+            </div>
+            <p class="text-center">
+              <input type="submit" value="Cadastrar" class="btn btn-lg btn-success">
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
+  </main>
+  <footer>
+    <p class="text-center white" style="margin-top:-10px;margin-bottom:0;">Deeto &copy; Todos os direitos reservados</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/cadastro.js"></script>
+  <style>
+    .titulo-destaque {
+      font-size: 72px;
+      margin-top: -20px !important;
+      padding-top: 10%;
+    }
+
+    .white {
+      color: #fff;
+    }
+  </style>
 </body>
 
 </html>
