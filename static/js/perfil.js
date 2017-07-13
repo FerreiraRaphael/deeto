@@ -34,15 +34,17 @@ $(function () {
   function fillImages(imgs) {
     $(".user-img-container input").removeClass("btn-danger").val("Salvar Imagem");
     $(".user-img img").attr("src", "/static/img/user.jpg");
-    imgs.forEach(function (img, index) {
+    if (imgs !== undefined) {
+      imgs.forEach(function (img, index) {
       var ele = $($(".user-img").get(index));
       ele.get(0).dataset.img = img;
       ele.find("img").attr("src", $.cloudinary.url(img, {
-        secure: true,
-        width: 150, height: 200, crop: 'fill', gravity: "face"
-      }));
+          secure: true,
+          width: 150, height: 200, crop: 'fill', gravity: "face"
+        }));
       ele.parent().find("input").addClass("btn-danger").val("Deletar Imagem");
-    });
+      });
+    }
   }
 
   function getImgIds() {
