@@ -6,13 +6,14 @@ const router = new Router();
 router
   .route("/")
   .get([passport.authenticate("bearer", { session: false }), controller.find])
+  .put([passport.authenticate("bearer", { session: false }), controller.update])
+  .delete([passport.authenticate("bearer", { session: false }), controller.remove])
   .post(controller.create);
 
-router
-  .route("/:id")
-  .put(controller.update)
-  .get(controller.findById)
-  .delete(controller.remove);
+// router
+//   .route("/:id")
+//   .get(controller.findById)
+//   .delete(controller.remove);
 
 router.route("/auth").post(controller.auth);
 

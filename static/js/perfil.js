@@ -102,12 +102,18 @@ $(function () {
   }
 
   function deleteUser() {
-    new Api("/api/users").delete({
-      success: function() {
-        localStorage.token = "";
-        window.location.href = "/entrar";
-      }
-    })
+    
+    var c = confirm("Você deseja apagar sua conta?");
+
+    if (c) {
+      new Api("/api/users").delete({
+        success: function() {
+          localStorage.token = "";
+          window.location.href = "/entrar";
+        }
+      })
+    }
+    
   }
 
   Auth.verificarToken(fillUserData, function () {

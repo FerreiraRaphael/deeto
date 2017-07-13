@@ -5,8 +5,11 @@ import config from "../../../tools/config";
 
 class UserController {
   static async find(req, res) {
-    const users = await User.find({}, "name email").catch(e => res.json({ e }));
-    res.json(users);
+    const result = await User.findById(
+      req.user._id,
+      "name email images description"
+    ).catch(e => res.json({ e }));
+    res.json(result);
   }
 
   static async create(req, res) {
@@ -15,9 +18,10 @@ class UserController {
   }
 
   static async findById(req, res) {
-    const result = await User.findById(req.params.id, "name email").catch(e =>
-      res.json({ e })
-    );
+    const result = await User.findById(
+      req.params.id,
+      "name email images"
+    ).catch(e => res.json({ e }));
     if (!result) {
       res.sendStatus(404);
     }
@@ -25,10 +29,9 @@ class UserController {
   }
 
   static async update(req, res) {
-    const result = await User.update(
-      { _id: req.params.id },
-      req.body
-    ).catch(e => res.json({ e }));
+    const result = await User.update({ _id: req.user._id }, req.body).catch(e =>
+      res.json({ e })
+    );
     if (result.n < 1) {
       res.sendStatus(404);
     }
@@ -39,7 +42,7 @@ class UserController {
   }
 
   static async remove(req, res) {
-    const result = await User.remove({ _id: req.params.id }).catch(e =>
+    const result = await User.remove({ _id: req.user._id }).catch(e =>
       res.json({ e })
     );
     if (!result) {
@@ -50,6 +53,7 @@ class UserController {
 
   static async auth(req, res) {
     try {
+      debugger;
       const user = await User.findOne({ email: req.body.email });
       if (!user)
         res.json({ sucess: false, message: "Wrong password or email" });

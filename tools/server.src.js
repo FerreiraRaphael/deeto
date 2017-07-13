@@ -8,7 +8,7 @@ import BearerStrategy from "passport-http-bearer";
 import config from "./config";
 import routes from "../api/routes";
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const app = express();
 const strategy = new BearerStrategy((token, done) => {
   jwt.verify(token, config.SECRET, (err, user) => {
@@ -21,7 +21,7 @@ const strategy = new BearerStrategy((token, done) => {
         message: "Failed to authenticate token."
       });
     }
-    return done(null, user);
+    return done(null, user._doc);
   });
 });
 
@@ -31,12 +31,10 @@ app.set("superSecret", config.SECRET);
 
 passport.use(strategy);
 
-app.use("/static", express.static("static"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
-
-// app.use(require("webpack-hot-middleware")(compiler));
+app.use("/static", express.static("static"));
 
 console.log(`Staring web server at PORT: ${port}`);
 

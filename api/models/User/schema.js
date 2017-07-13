@@ -6,8 +6,12 @@ mongoose.Promise = global.Promise;
 const schema = Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  images: [String],
+  description: String
 });
+
+schema.path("images").validate(images => images.length <= 4);
 
 schema.pre("save", async function hashPassword(next) {
   try {
