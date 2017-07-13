@@ -22,4 +22,8 @@ router.route("/entrar").get((req, res) => {
   res.sendFile(views + "login.html");
 });
 
+router.route("/cadastro").get((req, res) => {
+  res.sendFile(views + "cadastro.html");
+});
+
 export default router;
