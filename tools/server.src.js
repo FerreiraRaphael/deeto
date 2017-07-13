@@ -5,14 +5,11 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import BearerStrategy from "passport-http-bearer";
-import webpack from "webpack";
-import webpackConfig from "./webpack.config.dev";
 import config from "./config";
 import routes from "../api/routes";
 
 const port = process.env.PORT || 8080;
 const app = express();
-const compiler = webpack(webpackConfig);
 const strategy = new BearerStrategy((token, done) => {
   jwt.verify(token, config.SECRET, (err, user) => {
     if (err) {
@@ -38,12 +35,6 @@ app.use("/static", express.static("static"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
-app.use(
-  require("webpack-dev-middleware")(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath
-  })
-);
 
 // app.use(require("webpack-hot-middleware")(compiler));
 
