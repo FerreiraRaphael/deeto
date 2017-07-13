@@ -18,4 +18,8 @@ router.route("/").get((req, res) => {
 router.use("/api/users", user);
 router.use("/api/matchs", match);
 
+router.route("/entrar").get((req, res) => {
+  res.sendFile(views + "login.html");
+});
+
 export default router;
