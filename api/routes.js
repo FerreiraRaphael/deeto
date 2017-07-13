@@ -26,4 +26,8 @@ router.route("/cadastro").get((req, res) => {
   res.sendFile(views + "cadastro.html");
 });
 
+router.route("/publicacao").get((req, res) => {
+  res.sendFile(views + "match.html");
+});
+
 export default router;
