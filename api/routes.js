@@ -7,10 +7,6 @@ const router = new Router();
 const views = path.resolve("public", "views") + path.sep;
 
 router.route("/").get((req, res) => {
-  res.sendFile(path.join(__dirname, "../public/index.html"));
-});
-
-router.route("/").get((req, res) => {
   res.sendFile(views + "index.html");
 });
 
@@ -27,6 +23,9 @@ router.route("/cadastro").get((req, res) => {
 
 router.route("/perfil").get((req, res) => {
   res.sendFile(views + "perfil.html");
+});
+router.route("/publicacao").get((req, res) => {
+  res.sendFile(views + "match.html");
 });
 
 export default router;
