@@ -1,11 +1,12 @@
 import { Router } from "express";
+import path from "path";
 import user from "./models/User/routes";
 import match from "./models/Match/routes";
 
 const router = new Router();
 
 router.route("/").get((req, res) => {
-  res.json({ message: "Welcome to api-test API!" });
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 router.use("/api/users", user);

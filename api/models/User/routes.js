@@ -3,8 +3,10 @@ import passport from "passport";
 import controller from "./controller";
 
 const router = new Router();
-router.route("/").get([passport.authenticate('bearer', { session: false }), controller.find]).post(controller.create);
-// router.route("/").get(controller.find).post(controller.create);
+router
+  .route("/")
+  .get([passport.authenticate("bearer", { session: false }), controller.find])
+  .post(controller.create);
 
 router
   .route("/:id")
