@@ -2,7 +2,6 @@ import { Router } from "express";
 import path from "path";
 import user from "./models/User/routes";
 import match from "./models/Match/routes";
-import path from "path";
 
 const router = new Router();
 const views = path.resolve("public", "views") + path.sep;
