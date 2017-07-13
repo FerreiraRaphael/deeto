@@ -5,71 +5,42 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../static/css/app.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="page">
-        <header>
-            <div class="row">
-                <div class="small-12 large-4 columns">
-                    <a href="match.html">
-                        <img src="../static/img/Deeto.png" alt="Logo Deeto Web" />
-                    </a>
-                </div>
-                <div class="small-12 large-4 large-offset-4 columns">
-                    <div class="user-info float-right">
-                        <img src="../static/img/user-icon.png" alt="Imagem do usuário" class="float-right user-image" />
-                        <a href="#" class="float-right user-name">Nome Usuário</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <section>
-            <div class="row">
-                <div class="small-12 large-8 large-centered columns">
-                    <div class="content-page">
-                        <h2>Título da Página</h2>
-                        <hr>
-                        <div class="content">
-                            <!-- Insira o conteúdo neste bloco -->
-                             <div class="row">
-                                 <div class="small-12 medium-6 columns">
-                                    <img src="https://unsplash.it/200/300/?random" alt="Descrição Deeto">
-                                </div>
-                                <div class="small-12 medium-6 columns">
-                                    <p>
-                                        Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o
-                                        século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou
-                                        para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos,
-                                        como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.
-                                        Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens
-                                        de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de
-                                        editoração eletrônica como Aldus PageMaker.
-                                    </p>
-                                </div>
-                                <div class="large-12 columns">
-                                    <p class="text-center">
-                                    <a href="cadastro.html" class="button primary">Cadastre-se</a>
-                                    <a href="login.html" class="button primary">Entre</a>
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <div class="row">
-                <div class="small-12 large-centered columns">
-                    <p class="text-center">
-                        Deeto &copy; 2017 - Todos os direitos reservados
-                    </p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
+    <header>
+        <nav class="navbar navbar-default"> 
+            <div class="container-fluid"> 
+                <div class="navbar-header"> 
+                    <a href="#" class="navbar-brand">
+                        <img src="../static/img/Deeto.png" alt="" height="36px">
+                    </a> 
+                </div> 
+                <div> 
+                    <p class="navbar-text navbar-right">
+                        <a href="/entrar" class="btn btn-primary">ENTRAR</a>
+                    </p> 
+                </div> 
+            </div> 
+        </nav>
+    </header>
+    <main class="inicio">
+        <h1 class="text-center titulo-destaque white">Bem vindo ao Deeto</h1>
+        <h4 class="text-center white">A rede social que te conecta as pessoas que gostam dos mesmos animes que você.</h4>
+        <h4 class="text-center white">Cadastre-se, é grátis!</h4>
+        <br>
+        <p class="text-center">
+            <a href="/cadastro" class="btn btn-lg btn-success">CADASTRAR</a>
+        </p>
+        <video autoplay loop id="video-background" muted plays-inline>
+            <source src="../static/video/hearts.mp4" type="video/mp4">
+        </video>
+    </main>
+    <footer>
+        <p class="text-center white" style="margin-top:-10px;margin-bottom:0;">Deeto &copy; Todos os direitos reservados</p>
+    </footer>
 </body>
 
 </html>

@@ -3,12 +3,33 @@ html, body {
   height: 100%;
 }
 body {
-  background: #CB356B;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #CB356B, #BD3F32);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #CB356B, #BD3F32); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
   background-attachment: fixed;
-  display: block;
+  background-size: cover;
+}
+
+/* The only rule that matters */
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+main.inicio {
+  background: rgba(51,51,51,.84);
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  margin-bottom: -10px;
 }
 .content-page {
 	padding:8px;
@@ -16,21 +37,21 @@ body {
 	box-shadow: 0 0 4px rgba(0,0,0,.14);
 	border-radius: 4px;
 }
-header{
-	background: #fff;
-	z-index: 2;
-	max-height: 10vh;
-	box-shadow: 0 0 4px rgba(0,0,0,.44);
-	margin-bottom: 20px;
+.titulo-destaque {
+    font-size: 72px;
+    margin-top: -20px !important;
+    padding-top: 10%;
 }
-header img {
-	max-height: 9vh;
-	padding: 12px 0;
-}
-footer {
-	margin-top: 100px;
+.white {
+    color: #fff;
 }
 
+footer {
+  background: rgba(51,51,51,.84);
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 50px;
+}
 
 /* User Style */
 
@@ -157,10 +178,35 @@ a:hover{
   justify-content: space-around;
 }
 
-.match-controls .fa-heart{
-  color: green;
+.titulo-destaque {
+  font-size: 72px;
+  margin-top: -20px !important;
+  padding-top: 10%;
 }
 
-.match-controls .fa-times{
-  color: red;
+.white {
+  color: #fff;
+}
+
+.user-img {
+  width: 150px;
+  height: 200px;
+  margin: auto;
+  padding: 15px;
+}
+
+.user-img img {
+  width: 100%;
+  height: auto;
+}
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+}
+.slick-prev {
+    left: 0;
+}
+.slick-next {
+    right: 0;
 }
