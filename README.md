@@ -10,11 +10,11 @@ Bem vindo a nova rede social Deeto!
 - [Rony Nogueira](https://github.com/ronynogueiras)
 
 # Dependências 
-
-- ReactJS  
+  
 - NodeJS
-- Foundation 
 - MongoDB 
+- jQuery 
+- Cloudnary
 
 # Como usar 
 
