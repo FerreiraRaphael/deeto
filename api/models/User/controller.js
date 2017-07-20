@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import User from "./schema";
-import config from "../../../tools/config";
+import config from "../../tools/config";
 
 class UserController {
   static async find(req, res) {

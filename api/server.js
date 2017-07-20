@@ -1,3 +1,5 @@
+// @flow
+/* eslint-disable no-console */
 import express from "express";
 import mongoose from "mongoose";
 import morgan from "morgan";
@@ -5,10 +7,10 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import BearerStrategy from "passport-http-bearer";
-import config from "./config";
-import routes from "../api/routes";
+import config from "./tools/config";
+import routes from "./routes";
 
-const port = process.env.PORT || 3000;
+const port = config.PORT;
 const app = express();
 const strategy = new BearerStrategy((token, done) => {
   jwt.verify(token, config.SECRET, (err, user) => {
